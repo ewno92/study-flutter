@@ -45,46 +45,60 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.grey[900],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.zero),
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Column(
+              children: [
+                DrawerHeader(child: Image.asset("lib/images/logo.png")),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Divider(color: Colors.grey[800]),
+                ),
+
+                // pages
+                ListTile(
+                  leading: const Icon(Icons.home, color: Colors.white),
+                  title: const Text(
+                    "Home",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    navigateBottomNavbar(0);
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.home, color: Colors.white),
+                  title: const Text(
+                    "Test2",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    navigateBottomNavbar(1);
+                  },
+                ),
+              ],
+            ),
+
+            ListTile(
+              leading: const Icon(Icons.logout, color: Colors.white),
+              title: const Text(
+                "Log Out",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                navigateBottomNavbar(1);
+              },
+            ),
+
             // logo
-            DrawerHeader(child: Image.asset("lib/images/logo.png")),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Divider(color: Colors.grey[800]),
-            ),
-
-            // pages
-            Padding(
-              padding: const EdgeInsets.only(left: 25),
-              child: ListTile(
-                leading: const Icon(Icons.home, color: Colors.white),
-                title: const Text(
-                  "Home",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  navigateBottomNavbar(0);
-                },
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 25),
-              child: ListTile(
-                leading: const Icon(Icons.home, color: Colors.white),
-                title: const Text(
-                  "Home",
-                  style: TextStyle(color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  navigateBottomNavbar(1);
-                },
-              ),
-            ),
           ],
         ),
       ),
