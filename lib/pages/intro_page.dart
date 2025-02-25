@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/components/my_button.dart';
 import 'package:study_flutter/pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
@@ -38,7 +39,7 @@ class IntroPage extends StatelessWidget {
 
               const SizedBox(height: 48),
 
-              GestureDetector(
+              MyButton(
                 onTap:
                     () => Navigator.push(
                       context,
